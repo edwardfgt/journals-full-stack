@@ -13,7 +13,13 @@
     },
     "categories": {
       "function": {
-        "backendFunction": {}
+        "backendFunction": {
+          "deploymentBucketName": "amplify-journalsapi-dev-233758-deployment",
+          "s3Key": "amplify-builds/backendFunction-6f526359435345345541-build.zip"
+        }
+      },
+      "api": {
+        "backend": {}
       }
     }
   }

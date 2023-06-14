@@ -1,7 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Amplify, { API } from "aws-amplify";
+import { useEffect, useState } from "react";
 
 function App() {
+  useEffect(() => {
+    testAPI();
+  }, []);
+
+  const [myMessage, setMyMessage] = useState("");
+
+  async function testAPI() {
+    API.get("backend", "/api", {})
+      .then((response) => {
+        setMyMessage(response.success);
+        console.log(`response: ${response}`);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +36,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>{myMessage}</p>
       </header>
     </div>
   );

@@ -10,6 +10,11 @@
       "StackName": "amplify-journalsapi-dev-233758",
       "StackId": "arn:aws:cloudformation:us-east-1:804666944614:stack/amplify-journalsapi-dev-233758/1da129a0-0b04-11ee-9718-0a396bd5401d",
       "AmplifyAppId": "d1ls133j341mw6"
+    },
+    "categories": {
+      "function": {
+        "backendFunction": {}
+      }
     }
   }
 }

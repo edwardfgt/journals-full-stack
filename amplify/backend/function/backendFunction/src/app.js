@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 
+const AWS = require("aws-sdk");
+const secretsManager = new AWS.SecretsManager();
+
 // declare a new express app
 const app = express();
 app.use(bodyParser.json());
@@ -14,8 +17,19 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/api", function (req, res) {
-  res.json({ success: "get call succeed!", url: req.url });
+app.get("/api", async function (req, res) {
+  try {
+    const secretData = await secretsManager
+      .getSecretValue({ SecretId: "journals/aws" })
+      .promise();
+
+    const secretValues = JSON.parse(secretData.SecretString);
+    console.log(`${secretValues.API_KEY}`);
+    res.json({ success: `${secretValues.API_KEY}`, url: req.url });
+  } catch (error) {
+    console.error("Error getting secret", error);
+    res.status(500).json({ error: "Error getting secret" });
+  }
 });
 
 module.exports = app;

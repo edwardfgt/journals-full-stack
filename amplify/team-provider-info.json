@@ -15,7 +15,7 @@
       "function": {
         "backendFunction": {
           "deploymentBucketName": "amplify-journalsapi-dev-233758-deployment",
-          "s3Key": "amplify-builds/backendFunction-792b73456c6e79434f4b-build.zip"
+          "s3Key": "amplify-builds/backendFunction-50712b31454a6e455055-build.zip"
         }
       },
       "api": {

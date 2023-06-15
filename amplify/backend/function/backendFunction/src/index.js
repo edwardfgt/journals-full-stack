@@ -1,5 +1,7 @@
-const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./app');
+import Amplify from "aws-amplify";
+
+const awsServerlessExpress = require("aws-serverless-express");
+const app = require("./app");
 
 /**
  * @type {import('http').Server}
@@ -11,5 +13,5 @@ const server = awsServerlessExpress.createServer(app);
  */
 exports.handler = (event, context) => {
   console.log(`EVENT: ${JSON.stringify(event)}`);
-  return awsServerlessExpress.proxy(server, event, context, 'PROMISE').promise;
+  return awsServerlessExpress.proxy(server, event, context, "PROMISE").promise;
 };

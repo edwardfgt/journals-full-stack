@@ -3,6 +3,7 @@ import Amplify, { API } from "aws-amplify";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/home/home";
+import Contact from "./components/home/contact/contact";
 
 function App() {
   // const [myMessage, setMyMessage] = useState("");
@@ -24,6 +25,7 @@ function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>

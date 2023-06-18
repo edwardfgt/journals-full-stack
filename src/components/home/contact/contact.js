@@ -1,4 +1,5 @@
 import { FC, ReactElement, useState } from "react";
+import Amplify, { API } from "aws-amplify";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -21,28 +22,28 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("form submitted");
-    const url = "http://localhost:3000/email";
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+
+    const payload = {
+      body: {
         email: email,
         subject: subject,
         message: message,
-      }),
+      },
     };
 
-    const response = await fetch(url, options);
-    const data = await response.text();
-    if (data == "successful") {
-      setSuccess(true);
-      console.log(success);
-    } else {
-      console.error("Error submitting the form:", response.statusText);
+    try {
+      const response = await API.post("backend", "/email", payload);
+      if (response.status === "successful") {
+        setSuccess(true);
+        console.log(success);
+      } else {
+        console.error("Error submitting the form:", response.statusText);
+      }
+    } catch (err) {
+      console.error("Error submitting the form:", err);
     }
   };
+
   return (
     <section className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center">
       <div className="px-4 mx-auto max-w-2xl">

@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
 
 const AWS = require("aws-sdk");
-const secretsManager = new AWS.SecretsManager();
 
 // declare a new express app
 const app = express();
@@ -21,15 +20,9 @@ app.use(function (req, res, next) {
 
 app.post("/email", async function (req, res) {
   try {
-    const secretData = await secretsManager
-      .getSecretValue({ SecretId: "journals/aws" })
-      .promise();
-
-    const secretValues = JSON.parse(secretData.SecretString);
-
     const ses = new aws.SES({
-      accessKeyId: secretValues.API_KEY,
-      secretAccessKey: secretValues.API_SECRET,
+      accessKeyId: process.env.sesAPI,
+      secretAccessKey: process.env.sesSECRET,
       region: "us-east-1",
     });
 

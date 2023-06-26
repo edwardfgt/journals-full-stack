@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NewsletterModal from "../newsletter-modal/newsletter-modal";
+import NewsletterModal from "../newsletter-modal/newsletterModal";
 
 const NewsletterGrid = ({ newsletters }) => {
   const [open, setOpen] = useState(false);

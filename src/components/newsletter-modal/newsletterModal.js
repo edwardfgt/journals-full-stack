@@ -1,6 +1,6 @@
-import { FC, useState } from "react";
+import { useState } from "react";
 
-const NewsletterModal = (open, onClose, newsletter) => {
+const NewsletterModal = ({ open, onClose, newsletter }) => {
   const [email, setEmail] = useState("");
 
   const handleEmailChange = (event) => {

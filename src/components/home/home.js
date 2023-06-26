@@ -1,7 +1,10 @@
+import newsletters from "../../assets/newsletters";
+import NewsletterGrid from "../newsletter-grid/newsletterGrid";
+
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <NewsletterGrid newsletters={newsletters} />
     </>
   );
 };

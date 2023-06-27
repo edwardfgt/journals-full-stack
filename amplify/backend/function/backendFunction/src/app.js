@@ -15,15 +15,11 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    return res.status(200).json({});
+  }
   next();
-});
-
-// Handle pre flight options requests
-app.options("/email", function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.sendStatus(200);
 });
 
 app.post("/email", async function (req, res) {

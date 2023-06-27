@@ -18,6 +18,14 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Handle pre flight options requests
+app.options("/email", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.sendStatus(200);
+});
+
 app.post("/email", async function (req, res) {
   try {
     const ses = new aws.SES({

@@ -36,8 +36,9 @@ const Contact = () => {
     };
 
     const response = await fetch(url, options);
-    const data = await response.text();
-    if (data === "successful") {
+    const data = await response;
+    console.log(data);
+    if (data.ok === true) {
       setSuccess(true);
       console.log(success);
     } else {

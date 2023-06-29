@@ -1,5 +1,4 @@
-import { FC, ReactElement, useState } from "react";
-import Amplify, { API } from "aws-amplify";
+import { useState } from "react";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -22,25 +21,27 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("form submitted");
-
-    const payload = {
-      body: {
+    const url =
+      "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/email";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         email: email,
         subject: subject,
         message: message,
-      },
+      }),
     };
 
-    try {
-      const response = await API.post("backend", "/email", payload);
-      if (response.status === "successful") {
-        setSuccess(true);
-        console.log(success);
-      } else {
-        console.error("Error submitting the form:", response.statusText);
-      }
-    } catch (err) {
-      console.error("Error submitting the form:", err);
+    const response = await fetch(url, options);
+    const data = await response.text();
+    if (data === "successful") {
+      setSuccess(true);
+      console.log(success);
+    } else {
+      console.error("Error submitting the form:", response.statusText);
     }
   };
 

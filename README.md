@@ -7,3 +7,4 @@ Features still to add:
 - New newsletter layout
 - Mobile friendly
 - light / dark mode
+- Try to replicate white mode bug

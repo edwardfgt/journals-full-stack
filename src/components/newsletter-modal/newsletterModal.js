@@ -13,28 +13,28 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
     console.log("form submitted");
 
     if (newsletter) {
-      const apiKey = import.meta.env.VITE_BEEHIIV_API_KEY;
-      const url = `https://api.beehiiv.com/v2/publications/${newsletter.pubID}/subscriptions`;
+      const url = `https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/subscribe`;
       const options = {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
-          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           email: email,
-          reactivate_existing: false,
-          send_welcome_email: true,
-          utm_source: "Journals.gg",
-          referring_site: "https://journals.gg",
+          pubID: newsletter.pubID
         }),
       };
 
       const response = await fetch(url, options);
-      // const data = await response.json();
-      // console.log(data);
+      const data = await response;
+      console.log(data);
+      if (data.ok === true) {
+        setSuccess(true);
+        console.log(success);
+      } else {
+        console.error("Error submitting the form:", response.statusText);
+      }
+    };
     }
   };
 

@@ -21,7 +21,7 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
         },
         body: JSON.stringify({
           email: email,
-          pubID: newsletter.pubID
+          pubID: newsletter.pubID,
         }),
       };
 
@@ -29,12 +29,10 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
       const data = await response;
       console.log(data);
       if (data.ok === true) {
-        setSuccess(true);
-        console.log(success);
+        console.log("success");
       } else {
         console.error("Error submitting the form:", response.statusText);
       }
-    };
     }
   };
 

@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <>
       <div className="mt-90 mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-30 lg:flex lg:px-8 lg:pt-20">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col justify-center items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col justify-center items-center mb-4 sm:mb-0">
             <h1 className="mb-4 text-6xl text-center text-white">
               Journals.gg
             </h1>

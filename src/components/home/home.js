@@ -33,7 +33,9 @@ const Home = () => {
           <h2 className="text-center text-2xl font-semibold leading-8 text-white mb-10">
             Our Brands
           </h2>
-          <NewsletterGrid newsletters={newsletters} />
+          <div className="flex justify-center">
+            <NewsletterGrid newsletters={newsletters} />
+          </div>
         </div>
       </div>
     </>

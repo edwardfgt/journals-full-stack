@@ -4,7 +4,8 @@ Features still to add:
 - Form completion visuals or redirection on user subscribing
 - New logo and home link in navbar
 - Update favicon and web title
-- New newsletter layout
-- Mobile friendly
+- Update layout of newsletter page
+X Mobile friendly
+X Fix burger menu
 - light / dark mode
 - Try to replicate white mode bug

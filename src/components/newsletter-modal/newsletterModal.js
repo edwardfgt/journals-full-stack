@@ -46,11 +46,11 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
         className="absolute inset-0 bg-gray-500 opacity-75"
         onClick={onClose}
       ></div>
-      <div className="relative bg-gray-800 rounded-lg p-4 w-3/4 max-w-full mx-auto">
+      <div className="relative bg-gray-800 rounded-lg p-4 w-full sm:w-11/12 md:w-3/4 max-w-full mx-auto overflow-y-auto max-h-[90vh]">
         <div className="flex items-start my-10 mx-10">
           {newsletter && (
             <>
-              <div className="w-2/5 mr-4">
+              <div className="hidden w-2/5 mr-4">
                 <img
                   src={newsletter.image}
                   alt="Newsletter highlight"

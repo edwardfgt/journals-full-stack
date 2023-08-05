@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const NewsletterModal = ({ open, onClose, newsletter }) => {
   const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -30,6 +31,7 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
       console.log(data);
       if (data.ok === true) {
         console.log("success");
+        setSubmitted(true);
       } else {
         console.error("Error submitting the form:", response.statusText);
       }
@@ -63,22 +65,28 @@ const NewsletterModal = ({ open, onClose, newsletter }) => {
                 </h2>
                 <p className="mb-8 text-xl">{newsletter.description}</p>
 
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-4">
-                    <input
-                      type="email"
-                      onChange={handleEmailChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                      placeholder="Email"
-                    />
+                {submitted ? (
+                  <div className="text-white">
+                    Thank you for subscribing! Keep an eye on your inbox.{" "}
                   </div>
-                  <button
-                    type="submit"
-                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-                  >
-                    Submit
-                  </button>
-                </form>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-4">
+                      <input
+                        type="email"
+                        onChange={handleEmailChange}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        placeholder="Email"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                )}
                 <div className="mt-10">
                   <a
                     href={newsletter.href}

@@ -1,10 +1,9 @@
-# Deployed version can be found at https://main.d1ls133j341mw6.amplifyapp.com/
+# Deployed version can be found at www.journals.gg
 
 Features still to add:
-X Add text on form submission (newsletter modal) 
-- New logo and home link in navbar
-- Update favicon and web title
-- Update layout of newsletter page
-X Mobile friendly
-X Fix burger menu
-- light / dark mode
+- New logo and home link in navbar.
+- Update favicon and web title.
+- Update layout of newsletter page.
+- light / dark mode.
+- Explore using an RSS feed to show latest newsletter editions on site.
+- Integrate passionfroot once accepted.

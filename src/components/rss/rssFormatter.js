@@ -16,17 +16,22 @@ const formatRSS = (RSS_URL) => {
 
         for (let index = 0; index < 3; index++) {
           const currentPost = items[index];
+          console.log(currentPost);
           let formattedPost = {
             title: currentPost.title[0],
             link: currentPost.link[0],
             description: currentPost.description[0],
             pubDate: currentPost.pubDate[0],
+            image: currentPost.enclosure[0].$.url,
           };
           recentPosts.push(formattedPost);
         }
 
         console.log(recentPosts);
       });
+    })
+    .catch((error) => {
+      console.log("Error whilst fetching RSS:", error);
     });
 };
 

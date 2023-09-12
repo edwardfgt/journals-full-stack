@@ -10,8 +10,22 @@ const formatRSS = (RSS_URL) => {
           console.log("Error whilst parsing XML");
           return;
         }
-        const items = result.rss.channel[0].item;
-        console.log(items);
+        const items = result.rss.channel[0].item; // saves an array of objects(newsletter posts)
+
+        const recentPosts = [];
+
+        for (let index = 0; index < 3; index++) {
+          const currentPost = items[index];
+          let formattedPost = {
+            title: currentPost.title[0],
+            link: currentPost.link[0],
+            description: currentPost.description[0],
+            pubDate: currentPost.pubDate[0],
+          };
+          recentPosts.push(formattedPost);
+        }
+
+        console.log(recentPosts);
       });
     });
 };

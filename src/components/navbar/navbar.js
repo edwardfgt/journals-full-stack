@@ -16,7 +16,7 @@ export default function Navbar({ currentPath }) {
     },
     {
       name: "Sponsor",
-      href: "https://vtr4yvd7hvn.typeform.com/to/YZFk9ref?typeform-source=journals.gg",
+      href: "https://www.passionfroot.me/investingjournal",
       current: currentPath === "/sponsor",
     },
     { name: "Contact", href: "/contact", current: currentPath === "/contact" },

@@ -28,6 +28,7 @@ const formatRSS = (RSS_URL) => {
         }
 
         console.log(recentPosts);
+        return recentPosts;
       });
     })
     .catch((error) => {

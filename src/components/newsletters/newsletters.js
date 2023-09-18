@@ -1,4 +1,5 @@
 import { FC } from "react";
+import recentPosts from "../recent-posts/recent-posts";
 
 const NewsletterStats = [
   {
@@ -93,6 +94,7 @@ const Newsletters = () => {
                 </div>
               ))}
             </dl>
+            <recentPosts />
           </div>
         </div>
       </div>

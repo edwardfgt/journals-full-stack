@@ -5,7 +5,14 @@ const XMLDisplay = () => {
   const [xmlData, setXmlData] = useState(null);
 
   useEffect(() => {
-    fetch("https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/rss")
+    const url = `https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/rss`;
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         setXmlData(data);

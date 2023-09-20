@@ -1,5 +1,7 @@
-import { FC } from "react";
-import recentPosts from "../recent-posts/recent-posts";
+//import XMLDisplay from "../../helper-functions/rssFormatterManual";
+import RecentPosts from "../recent-posts/recent-posts";
+
+const RSS_URL = `https://rss.beehiiv.com/feeds/hhU1hZ5vnX.xml`;
 
 const NewsletterStats = [
   {
@@ -56,44 +58,15 @@ const Newsletters = () => {
               </p>
             </div>
           </div>
-
+          <div className="pt-14">
+            <RecentPosts
+              url={
+                "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/rss"
+              }
+            />
+          </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              {NewsletterStats.map((newsletter) => (
-                <div key={newsletter.name} className="flex flex-col">
-                  <dt className="text-base font-semibold leading-7 text-white">
-                    {newsletter.name}
-                  </dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                    <p className="flex-auto">{newsletter.description}</p>
-                    <p className="flex-auto">
-                      <b>Subscribers: </b>
-                      {newsletter.subscribers}
-                    </p>
-                    <p className="flex-auto">
-                      <b>Open Rate: </b>
-                      {newsletter.openRate}
-                    </p>
-                    <p className="flex-auto">
-                      <b>CTR: </b>
-                      {newsletter.ctr}
-                    </p>
-                    <p className="flex-auto">
-                      <b>Sponsorships: </b>
-                      {newsletter.sponsorships}
-                    </p>
-                    <p className="mt-6">
-                      <a
-                        href={newsletter.href}
-                        className="text-sm font-semibold leading-6 text-indigo-400"
-                      >
-                        Visit <span aria-hidden="true">→</span>
-                      </a>
-                    </p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
             <recentPosts />
           </div>
         </div>

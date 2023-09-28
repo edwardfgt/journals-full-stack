@@ -1,5 +1,4 @@
-//import XMLDisplay from "../../helper-functions/rssFormatterManual";
-import RecentPosts from "../recent-posts/recent-posts";
+import RecentPosts from "../RecentPosts/RecentPosts";
 
 const RSS_URL = `https://rss.beehiiv.com/feeds/hhU1hZ5vnX.xml`;
 const investingAPI =
@@ -67,15 +66,13 @@ const Newsletters = () => {
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
-            <recentPosts />
           </div>
 
-          <div className="pt-14">
+          <div className="pt-7">
             <RecentPosts url={cryptoAPI} newsletter="Crypto Journal" />
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
-            <recentPosts />
           </div>
         </div>
       </div>

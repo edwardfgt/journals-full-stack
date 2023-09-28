@@ -15,8 +15,15 @@ const RecentPosts = ({ url, newsletter }) => {
       .then((data) => {
         if (data && data.body) {
           const parsedPosts = JSON.parse(data.body);
-          console.log(parsedPosts);
-          setPosts(parsedPosts);
+          const formattedPosts = parsedPosts.map((post) => {
+            let date = new Date(post.pubDate);
+            let day = String(date.getDate()).padStart(2, "0");
+            let month = String(date.getMonth() + 1).padStart(2, "0");
+            let year = date.getFullYear();
+            let formattedDateStr = `${day}/${month}/${year}`;
+            return { ...post, formattedDateStr };
+          });
+          setPosts(formattedPosts);
         }
       })
       .catch((error) => {
@@ -24,7 +31,6 @@ const RecentPosts = ({ url, newsletter }) => {
       });
   }, []);
 
-  console.log(posts);
   return (
     <>
       {posts && posts.length > 0 ? (
@@ -40,31 +46,35 @@ const RecentPosts = ({ url, newsletter }) => {
             </div>
             <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {posts.map((post, index) => (
-                <article className="flex flex-col items-start justify-between">
-                  <div className="relative w-full">
-                    <a href={post.link}>
+                <article className="flex flex-col items-start">
+                  <a href={post.link}>
+                    <div className="relative w-full">
                       <img
                         src={post.image}
                         alt="Investing Journal edition preview"
                         className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                       />
-                    </a>
-                    <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                  </div>
+
+                      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                    </div>
+                  </a>
                   <div className="max-w-xl">
-                    <div className="mt-8 flex items-center gap-x-4 text-xs">
-                      <time dateTime={post.pubDate} className="text-gray-300">
-                        {post.pubDate}
+                    <div className="mt-8 flex items-center gap-x-4 text-s">
+                      <time
+                        dateTime={post.formattedDateStr}
+                        className="text-gray-300"
+                      >
+                        {post.formattedDateStr}
                       </time>
                     </div>
                     <div className="group relative">
-                      <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-300 group-hover:text-gray-600">
+                      <h3 className="mt-3 text-xl font-semibold leading-6 text-gray-300 group-hover:text-gray-600">
                         <a href={post.link}>
                           <span className="absolute inset-0" />
                           {post.title}
                         </a>
                       </h3>
-                      <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">
+                      <p className="mt-5 line-clamp-3 text-m leading-6 text-gray-300">
                         {post.description}
                       </p>
                     </div>

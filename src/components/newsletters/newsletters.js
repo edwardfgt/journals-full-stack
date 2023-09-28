@@ -2,6 +2,10 @@
 import RecentPosts from "../recent-posts/recent-posts";
 
 const RSS_URL = `https://rss.beehiiv.com/feeds/hhU1hZ5vnX.xml`;
+const investingAPI =
+  "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/rss";
+const cryptoAPI =
+  "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/cryptorss";
 
 const NewsletterStats = [
   {
@@ -59,11 +63,15 @@ const Newsletters = () => {
             </div>
           </div>
           <div className="pt-14">
-            <RecentPosts
-              url={
-                "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/rss"
-              }
-            />
+            <RecentPosts url={investingAPI} newsletter="Investing Journal" />
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
+            <recentPosts />
+          </div>
+
+          <div className="pt-14">
+            <RecentPosts url={cryptoAPI} newsletter="Crypto Journal" />
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>

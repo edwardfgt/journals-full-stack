@@ -23,10 +23,6 @@ const Footer = () => {
                   {" "}
                   Crypto Journal{" "}
                 </a>
-                <a className="hover:opacity-75" href="https://ai.journals.gg/">
-                  {" "}
-                  AI Journal{" "}
-                </a>
               </nav>
             </div>
             <div>

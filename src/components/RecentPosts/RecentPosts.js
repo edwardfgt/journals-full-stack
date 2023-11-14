@@ -47,7 +47,15 @@ const RecentPosts = ({ url, newsletter }) => {
             </div>
             <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
               {posts.map((post, index) => (
-                <div class="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
+                <div
+                  className="border border-stone-400 shadow rounded-md p-4 max-w-sm w-full mx-auto hover:border-blue-100 hover:bg-gray-900"
+                  onClick={() => (window.location.href = post.link)}
+                  role="button"
+                  tabIndex="0"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") window.location.href = post.link;
+                  }}
+                >
                   <article className="flex flex-col items-start">
                     <a href={post.link}>
                       <div className="relative w-full">

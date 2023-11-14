@@ -6,39 +6,6 @@ const investingAPI =
 const cryptoAPI =
   "https://jtz9p1w4ne.execute-api.us-east-1.amazonaws.com/dev/cryptorss";
 
-const NewsletterStats = [
-  {
-    name: "Investing Journal",
-    description:
-      "Our flagship publication - Bitesize market-moving news, summaries and links from the world of investing, three times a week.",
-    subscribers: "36,000+",
-    openRate: "35.1%",
-    ctr: "2.16%",
-    sponsorships: "Open",
-    href: "https://www.investingjournal.gg/",
-  },
-  {
-    name: "Crypto Journal",
-    description:
-      "Bitesize market-moving news, summaries and links from the world of Crypto and Web3, twice a week.",
-    subscribers: "5000+",
-    openRate: "39.6%",
-    ctr: "1.66%",
-    sponsorships: "Closed",
-    href: "https://crypto.journals.gg/",
-  },
-  {
-    name: "AI Journal",
-    description:
-      "Bitesize market-moving news, summaries and links from the world of AI and Machine Learning, every Friday.",
-    subscribers: "3300+",
-    openRate: "26.83%",
-    ctr: "3.29%",
-    sponsorships: "Closed",
-    href: "https://ai.journals.gg/",
-  },
-];
-
 const Newsletters = () => {
   return (
     <div>
@@ -61,18 +28,12 @@ const Newsletters = () => {
               </p>
             </div>
           </div>
-          <div className="pt-14">
+          <div className="pt-14 mb-14">
             <RecentPosts url={investingAPI} newsletter="Investing Journal" />
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
-          </div>
 
-          <div className="pt-7">
+          <div className="pt-7 mb-14">
             <RecentPosts url={cryptoAPI} newsletter="Crypto Journal" />
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"></dl>
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ const NewsletterGrid = ({ newsletters }) => {
   return (
     <>
       <div className="flex justify-center items-center w-full mb-40">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mx-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-5">
           {newsletters.map((newsletter, index) => (
             <div
               className="card w-full sm:w-auto bg-base-100 shadow-xl image-full hover:border"

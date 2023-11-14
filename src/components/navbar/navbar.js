@@ -20,6 +20,11 @@ export default function Navbar({ currentPath }) {
       current: currentPath === "/sponsor",
     },
     { name: "Contact", href: "/contact", current: currentPath === "/contact" },
+    {
+      name: "Grow a newsletter",
+      href: "https://agency.journals.gg/",
+      current: currentPath === "/agency",
+    },
   ];
 
   return (

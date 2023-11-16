@@ -30,7 +30,7 @@ const Footer = () => {
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
                 <a
                   className="hover:opacity-75"
-                  href="https://vtr4yvd7hvn.typeform.com/to/YZFk9ref?typeform-source=journals.gg"
+                  href="https://www.passionfroot.me/investingjournal"
                 >
                   {" "}
                   Sponsor{" "}

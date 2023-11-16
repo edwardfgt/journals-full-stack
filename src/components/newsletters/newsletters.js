@@ -16,15 +16,13 @@ const Newsletters = () => {
               <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                 Newsletters{" "}
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
+              <p className="mt-6 text-lg leading-8 text-white">
                 We're the go-to source for market news and investing insights,
                 trusted by <b>tens of thousands</b> of engaged retail and
                 institutional investors. From <b>CEOs</b> and{" "}
                 <b>hedge fund managers</b> to <b>amateur traders</b>, our
                 audience consists of finance and technology workers looking to
                 understand the world of <b>emerging investments</b>.
-                <br />
-                Interested in advertising with us? Get in touch!
               </p>
             </div>
           </div>

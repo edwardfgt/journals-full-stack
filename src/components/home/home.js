@@ -13,7 +13,7 @@ const Home = () => {
               From stocks, to crypto and beyond.
             </h1>
 
-            <div className="stats shadow mb-10 text-white">
+            <div className="stats shadow mb-10 text-white flex flex-col md:flex-row">
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
                 <div className="stat-title text-white">Readers</div>
@@ -34,6 +34,7 @@ const Home = () => {
                 <div className="stat-value">2</div>
               </div>
             </div>
+
             <h2 className="text-center align-top text-2xl text-white">
               No BS, no fluff and no spam - We help our readers become a better
               investor in 5 minutes per day.

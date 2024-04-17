@@ -22,7 +22,7 @@ export default function Navbar({ currentPath }) {
     { name: "Contact", href: "/contact", current: currentPath === "/contact" },
     {
       name: "Grow a newsletter",
-      href: "https://agency.journals.gg/",
+      href: "https://creator.journals.gg//",
       current: currentPath === "/agency",
     },
   ];

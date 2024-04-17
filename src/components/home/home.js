@@ -17,13 +17,13 @@ const Home = () => {
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
                 <div className="stat-title text-white">Readers</div>
-                <div className="stat-value">45K+</div>
+                <div className="stat-value">68K+</div>
               </div>
 
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
                 <div className="stat-title text-white">Emails Sent</div>
-                <div className="stat-value">3,400,000+</div>
+                <div className="stat-value">7,015,000+</div>
               </div>
 
               <div className="stat">
@@ -52,7 +52,7 @@ const Home = () => {
       <div className="Publications">
         <div>
           <h2 className="text-center text-2xl font-semibold leading-8 text-white mb-10">
-            Our Brands
+            Journals Brands
           </h2>
           <div className="flex justify-center">
             <NewsletterGrid newsletters={newsletters} />

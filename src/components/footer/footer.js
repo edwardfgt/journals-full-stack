@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="mt-8 text-xs text-white">© 2022 Journals gg</p>
+        <p className="mt-8 text-xs text-white">© 2024 Journals gg</p>
       </div>
     </footer>
   );

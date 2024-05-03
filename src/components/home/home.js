@@ -23,7 +23,7 @@ const Home = () => {
               <div className="stat">
                 <div className="stat-figure text-secondary"></div>
                 <div className="stat-title text-white">Emails Sent</div>
-                <div className="stat-value">7,015,000+</div>
+                <div className="stat-value">10,000,000+</div>
               </div>
 
               <div className="stat">
